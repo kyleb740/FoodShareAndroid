@@ -6,25 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class LogIn extends AppCompatActivity {
+public class FoodListActivity extends AppCompatActivity {
     // Declare View Vars
-    private Button goToListPage;
+    private Button goToEditPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
+        setContentView(R.layout.activity_food_list);
 
         // Assign Views from layout file to variables
-        goToListPage = (Button) findViewById(R.id.login);
+        goToEditPage = (Button) findViewById(R.id.edit);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Button clicked to go to Food List page
-                startActivity(new Intent(LogIn.this, FoodListActivity.class));
+                startActivity(new Intent(FoodListActivity.this, EditFood.class));
             }
         };
-        goToListPage.setOnClickListener(listener);
+        goToEditPage.setOnClickListener(listener);
     }
 }
